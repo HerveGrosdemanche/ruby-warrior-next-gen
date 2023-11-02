@@ -21,8 +21,15 @@ module RubyWarrior
         "i"
       end
 
-      def answers
+      def answer
         say response
+        flee
+        response
+      end
+
+      def flee
+        say "flees after giving info"
+        @position = nil
       end
     end
   end

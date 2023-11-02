@@ -1,6 +1,14 @@
 module RubyWarrior
   module Abilities
     class Talk < Base
+      def initialize(unit)
+        if unit.to_s == "Warrior"
+          @unit = unit
+        else
+          raise "Only a warrior can talk."
+        end
+      end
+
       def description
         "Initiates a conversation between the warrior and an informant."
       end
@@ -10,8 +18,8 @@ module RubyWarrior
         receiver = unit(direction)
         if receiver
           @unit.say "faces #{direction} and talks to #{receiver}"
-          if receiver.character == "i"
-            receiver.answers
+          if receiver.to_s == "Informant"
+            @unit.gather_info(receiver.answer)
           else
             @unit.say "but #{receiver} says nothing"
           end
