@@ -19,7 +19,9 @@ module RubyWarrior
     # TODO refactor and test this method
     def generate
       if level.number == 1
-        FileUtils.mkdir_p(level.player_path) unless File.exists? level.player_path
+        already_exists = File.exists? level.player_path
+        FileUtils.mkdir_p(level.player_path) unless already_exists
+        FileUtils.mkdir_p(level.player_path + '/logs') unless already_exists
         FileUtils.cp(templates_path + '/player.rb', level.player_path)
       end
       

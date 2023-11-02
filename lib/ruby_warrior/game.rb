@@ -14,6 +14,7 @@ module RubyWarrior
       end
       
       if profile.epic?
+        prepare_logging
         if profile.level_after_epic?
           go_back_to_normal_mode
         else
@@ -21,7 +22,12 @@ module RubyWarrior
         end
       else
         play_normal_mode
+        prepare_logging
       end
+    end
+
+    def prepare_logging
+      RubyWarrior::Logger.configure_logging(profile.player_path + "/logs/out.log")
     end
     
     def make_game_directory
@@ -60,6 +66,7 @@ module RubyWarrior
           prepare_next_level
           UI.puts "First level has been generated. See the rubywarrior/#{profile.directory_name}/README for instructions."
         else
+          prepare_logging
           play_current_level
         end
       end
@@ -109,6 +116,7 @@ module RubyWarrior
     
     def prepare_next_level
       next_level.generate_player_files
+      prepare_logging
       profile.level_number += 1
       profile.save # this saves score and new abilities too
     end
