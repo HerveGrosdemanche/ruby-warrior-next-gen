@@ -34,7 +34,7 @@ size 12, 7
 stairs 11, 3
 
 warrior 0, 0, :east do |u|
-  u.add_abilities :walk!, :attack!, :health, :rest!, :rescue!, :bind!, :listen, :direction_of, :feel, :direction_of_stairs, :distance_of, :detonate!, :look, :talk!
+  u.add_abilities :walk!, :attack!, :health, :rest!, :rescue!, :bind!, :listen, :direction_of, :feel, :direction_of_stairs, :distance_of, :detonate!, :look, :talk
 end
 
 unit :informant, 8, 1, :west do |u|

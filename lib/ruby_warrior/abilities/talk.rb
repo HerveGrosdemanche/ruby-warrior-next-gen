@@ -19,7 +19,7 @@ module RubyWarrior
         if receiver
           @unit.say "faces #{direction} and talks to #{receiver}"
           if receiver.to_s == "Informant"
-            @unit.gather_info(receiver.answer)
+            receiver.answer
           else
             @unit.say "but #{receiver} says nothing"
           end
