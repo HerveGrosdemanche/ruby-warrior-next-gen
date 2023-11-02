@@ -14,6 +14,10 @@ module RubyWarrior
     def at?(x, y)
       @x == x && @y == y
     end
+
+    def location
+      [@x, @y]
+    end
     
     def direction
       DIRECTIONS[@direction_index]

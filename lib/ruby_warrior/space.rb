@@ -29,7 +29,11 @@ module RubyWarrior
     end
     
     def empty?
-      unit.nil? && !wall?
+      (unit.nil? && !wall?) || deadly?
+    end
+
+    def deadly?
+      unit.kind_of? Units::Trap
     end
     
     def stairs?
