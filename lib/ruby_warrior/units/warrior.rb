@@ -7,6 +7,7 @@ module RubyWarrior
       def initialize
         @score = 0 # TODO make score dynamic
         @golem_abilities = []
+        @info = [] # initial mock of info gathering, possibly to be replaced by ActiveRecord
       end
       
       def play_turn(turn)
@@ -67,6 +68,10 @@ module RubyWarrior
         golem = Golem.new
         golem.add_abilities *@golem_abilities
         golem
+      end
+
+      def gather_info(info)
+        @info.push(info)
       end
     end
   end
