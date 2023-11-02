@@ -1,14 +1,9 @@
 #  ------------
 # |@           |
-# |            |
-# |            |
-# |            |
 # |         i  |
+# |            |
 # |           >|
-# |         i  |
-# |            |
-# |            |
-# |            |
+# |     i      |
 # |            |
 # |            |
 #  ------------
@@ -28,18 +23,20 @@ description 'As {warrior name} reaches out to take the princess\' hand, a trumpe
 '"Fine, to redeem yourself you can go ahead and save my Clio. She\'s not here, so there\'s no point in killing anyone else in the castle."\n'\
 '"But on your way out, do me a favor. I need a survey of the kingdom done. See my informant out there for the details."\n'\
 'He then leaves the room.\n'
-tip "Use warrior.talk to (maybe) get additional information from informants"
+tip "Use warrior.talk to (maybe) get useful information from informants"
 
 time_bonus 20 #TODO: Refine
 ace_score 19 #TODO: Refine
-size 4, 1
-stairs 3, 0
+size 12, 7
+stairs 11, 3
 
 warrior 0, 0, :east do |u|
   u.add_abilities :walk!, :feel, :direction_of_stairs, :talk!
 end
 
-unit :informant, 2, 0, :west do |u|
-  u.response = "blah blah blah"
+unit :informant, 8, 1, :west do |u|
+  u.response = "I am but a humble potato"
 end
-# unit :informant, 10, 1, :west
+unit :informant, 5, 4, :west do |u|
+  u.response = "Greetings warrior. The King has requested a survey of the kingdom. You should visit every square of the following levels, and take notes of what you encounter."
+end
