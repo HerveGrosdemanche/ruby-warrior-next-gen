@@ -18,6 +18,7 @@ require 'ruby_warrior/floor'
 require 'ruby_warrior/space'
 require 'ruby_warrior/position'
 require 'ruby_warrior/logger'
+require 'ruby_warrior/decree'
 
 require 'ruby_warrior/units/base'
 require 'ruby_warrior/units/warrior'
