@@ -1,11 +1,16 @@
 #  -------
 # |    .  |
-# |@   G >|
+# |@   g >|
 # |    .  |
 #  -------
 
 description "The vacation castle is in sight, but it is guarded. That guard looks .... strong."
-tip "The guard will only let you through if you have collected the survey data the King demands"
+tip <<-TEXT
+The guard will only let you through if you have collected the survey data the King demands. 
+The guard will want to look at your records, so you better write them with ActiveRecord.
+
+Lucky for you, the King has provided you with a template, that you can see in the .db file
+TEXT
 
 time_bonus 20 #TODO: Refine
 ace_score 19 #TODO: Refine
