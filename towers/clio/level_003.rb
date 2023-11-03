@@ -10,7 +10,7 @@
 
 description "As you progress, you can't help but notice that things are changing around you. So many bugs..."
 tip "No one likes bugs. Get rid of them if you can."
-clue "The Queen is a terrific opponent. There is a way to defeat her without violence, if search deeply enough."
+clue "The Queen is a terrific opponent. There is a way to defeat her without violence, if you search deeply enough."
 
 time_bonus 20 #TODO: Refine
 ace_score 19 #TODO: Refine
