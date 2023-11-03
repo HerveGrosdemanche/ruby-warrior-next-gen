@@ -32,6 +32,7 @@ require 'ruby_warrior/units/informant'
 require 'ruby_warrior/units/trap'
 require 'ruby_warrior/units/bug'
 require 'ruby_warrior/units/queen_bug'
+require 'ruby_warrior/units/guard'
 
 require 'ruby_warrior/abilities/base'
 require 'ruby_warrior/abilities/walk'
