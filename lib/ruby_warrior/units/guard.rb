@@ -78,26 +78,20 @@ module RubyWarrior
 
         player_notes = RubyWarrior::Note.all
 
-        # Weird math to handle when the player has more notes than expected
-        grade = 1.0
-        if player_notes.length > expected_notes.length
-          grade = 0.8 # if we get more notes than expected, we'll just set it to 0.8, because we're not that mean but it matters that we're getting too much info
-          grading_factor = 1 / expected_notes.length.to_f
-        else
-          grading_factor = 1 / player_notes.length.to_f
-        end
+        grading_factor = 1.0
+        # if we get more notes than expected, we'll just set it to 0.8, because we're not that mean but it matters that we're getting too much info
+        grading_factor = 0.8 if player_notes.length > expected_notes.length
+        matching_notes = 0
 
         expected_notes.each do |note|
-          match = false
           player_notes.each do |player_note|
             if player_note.level_number == note.level_number && player_note.unit_type == note.unit_type && player_note.x == note.x && player_note.y == note.y
-              match = true
+              matching_notes += 1
+              break
             end
           end
-          grade = grade - grading_factor unless match
         end
-
-        grade
+        (matching_notes.to_f / expected_notes.length.to_f) * grading_factor
       end
     end
   end
