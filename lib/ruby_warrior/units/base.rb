@@ -27,6 +27,9 @@ module RubyWarrior
           if health <= 0
             @position = nil
             say "dies"
+            if self.kind_of? Units::Bug
+              RubyWarrior::Logger.new.send(:info, self.log_message)
+            end
           end
         end
       end

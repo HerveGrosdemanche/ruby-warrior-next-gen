@@ -1,6 +1,7 @@
 module RubyWarrior
   module Units
     class Bug < Base
+      attr_accessor :log_message
       def initialize
         add_abilities :feel
       end
